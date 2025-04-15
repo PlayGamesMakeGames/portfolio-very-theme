@@ -28,9 +28,9 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
     };
     this.registerLocalization({
       context: this,
-      localesPath:
-        new URL("./locales/portfolio-screen.ar.json", import.meta.url).href +
-        "/../",
+    //   localesPath:
+    //     new URL("./locales/portfolio-screen.ar.json", import.meta.url).href +
+    //     "/../",
       locales: ["ar", "es", "hi", "zh"],
     });
   }
@@ -85,11 +85,11 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
 
   /**
    * haxProperties integration via file reference
-   */
-  static get haxProperties() {
-    return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
-      .href;
-  }
+//    */
+//   static get haxProperties() {
+//     return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
+//       .href;
+//   }
 }
 
 globalThis.customElements.define(PortfolioScreen.tag, PortfolioScreen);
