@@ -54,11 +54,22 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
+        /* margin: var(--ddd-spacing-2);
+        padding: var(--ddd-spacing-4); */
+        height: 100vh;
+        width: 100vw;
       }
       h3 span {
         font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
+      }
+      .title {
+        font-size: var(--ddd-font-size-l);
+        font-weight: var(--ddd-font-weight-bold);
+        text-align: center;
+      }
+      .content {
+        font-size: var(--ddd-font-size-m);
+        text-align: center;
       }
     `];
   }
@@ -67,8 +78,8 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
-  <slot></slot>
+  <h1 class="title">${this.title}</h1>
+  <slot class="content"></slot>
 </div>`;
   }
 

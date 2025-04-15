@@ -22,7 +22,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
   constructor() {
     super();
-    this.title = "";
+    this.title = "Portfolio";
     this.t = this.t || {};
     this.t = {
       ...this.t,
@@ -69,7 +69,8 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
+  <!-- <navbar></navbar> -->
+  <h1 class="title">${this.title}</h1>
   <slot></slot>
 </div>`;
   }

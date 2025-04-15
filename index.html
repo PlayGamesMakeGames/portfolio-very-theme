@@ -34,11 +34,20 @@
 
 <body>
   <div id="demo">
-    <h1>Portfolio</h1>
-    <!-- this is going to do whatever the tag's defaults are -->
-    <portfolio-very-theme></portfolio-very-theme>
+    <portfolio-very-theme title="Portfolio">
+      <portfolio-screen title="About">
+        <p>A bunch of content here for screen 1</p>
+      </portfolio-screen>
+      <portfolio-screen title="Projects">
+        <p>A bunch of content here for screen 2</p>
+      </portfolio-screen>
+      <portfolio-screen title="Contact">
+        <p>A bunch of content here for screen 3</p>
+      </portfolio-screen>
+    </portfolio-very-theme>
   </div>
   <script type="module" src="./portfolio-very-theme.js"></script>
+  <script type="module" src="./portfolio-screen.js"></script>
 
   <!-- Take HAX, the Web and you further down the rabbit hole -->
   <!-- <style>
