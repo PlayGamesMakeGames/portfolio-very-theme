@@ -5,19 +5,17 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
-import "@haxtheweb/scroll-button/scroll-button.js";
-import "@haxtheweb/simple-cta/simple-cta.js";
 
 /**
- * `portfolio-very-theme`
+ * `portfolio-screen`
  * 
  * @demo index.html
- * @element portfolio-very-theme
+ * @element portfolio-screen
  */
-export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
+export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
-    return "portfolio-very-theme";
+    return "portfolio-screen";
   }
 
   constructor() {
@@ -31,7 +29,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     this.registerLocalization({
       context: this,
       localesPath:
-        new URL("./locales/portfolio-very-theme.ar.json", import.meta.url).href +
+        new URL("./locales/portfolio-screen.ar.json", import.meta.url).href +
         "/../",
       locales: ["ar", "es", "hi", "zh"],
     });
@@ -83,4 +81,4 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   }
 }
 
-globalThis.customElements.define(PortfolioVeryTheme.tag, PortfolioVeryTheme);
+globalThis.customElements.define(PortfolioScreen.tag, PortfolioScreen);
