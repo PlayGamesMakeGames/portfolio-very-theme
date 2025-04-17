@@ -13,7 +13,7 @@
       padding: 0;
     }
     #demo {
-      margin: var(--ddd-spacing-2);
+      /* margin: var(--ddd-spacing-2); */
     }
     portfolio-very-theme {
       /* margin: var(--ddd-spacing-2);
@@ -34,20 +34,45 @@
 
 <body>
   <div id="demo">
+    <nav-bar></nav-bar>
     <portfolio-very-theme title="Portfolio">
-      <portfolio-screen title="About">
-        <p>A bunch of content here for screen 1</p>
+      <portfolio-screen title="About" id="1" color="beaverBlue">
+        <div>
+          <p>I'm just a chill guy :P</p>
+        </div>
       </portfolio-screen>
-      <portfolio-screen title="Projects">
-        <p>A bunch of content here for screen 2</p>
+      <portfolio-screen title="Skills" id="2">
+        <div>
+          <ul>
+            <li>java</li>
+            <li>HTML, CSS, Javascript</li>
+            <li>python</li>
+          </ul>
+        </div>
       </portfolio-screen>
-      <portfolio-screen title="Contact">
-        <p>A bunch of content here for screen 3</p>
+      <portfolio-screen title="Projects" id="3">
+        <div>
+          <p>GAMES, UNLIMITED GAMES</p>
+          <a href="https://playgames-makegames.itch.io">PlayGamesMakeGames itch.io page</a>
+        </div>
       </portfolio-screen>
+      <portfolio-screen title="Competitions" id="4">
+        <div>
+          <p>HackPSU Hackathon</p>
+          <a href="https://collabamap.8ken.biz">collabamap (Spring 2025)</a>
+        </div>
+      </portfolio-screen>
+      <portfolio-screen title="Contact" id="5">
+        <div>
+          <p>Email: tjl6022@psu.edu</p>
+        </div>
+      </portfolio-screen>
+    </portfolio-very-theme>
     </portfolio-very-theme>
   </div>
   <script type="module" src="./portfolio-very-theme.js"></script>
   <script type="module" src="./portfolio-screen.js"></script>
+  <script type="module" src="./navbar.js"></script>
 
   <!-- Take HAX, the Web and you further down the rabbit hole -->
   <!-- <style>

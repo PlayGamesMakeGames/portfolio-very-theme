@@ -7,7 +7,6 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import "@haxtheweb/scroll-button/scroll-button.js";
 import "@haxtheweb/simple-cta/simple-cta.js";
-
 /**
  * `portfolio-very-theme`
  * 
@@ -56,8 +55,11 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
+        /* margin: var(--ddd-spacing-2);
+        padding: var(--ddd-spacing-4); */
+      }
+      .title{
+        margin-top: var(--ddd-spacing-20);
       }
       h3 span {
         font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
@@ -69,7 +71,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
-  <!-- <navbar></navbar> -->
+  
   <h1 class="title">${this.title}</h1>
   <slot></slot>
 </div>`;

@@ -5,23 +5,23 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
-
+import "@haxtheweb/scroll-button/scroll-button.js";
+import "@haxtheweb/simple-cta/simple-cta.js";
 /**
  * `portfolio-screen`
  * 
  * @demo index.html
- * @element portfolio-screen
+ * @element nav-bar
  */
-export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
+export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
-    return "portfolio-screen";
+    return "nav-bar";
   }
 
   constructor() {
     super();
     this.title = "";
-    this.color = "";
     this.t = this.t || {};
     this.t = {
       ...this.t,
@@ -41,7 +41,6 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
-      color: { type: String},
     };
   }
 
@@ -58,9 +57,13 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
       .wrapper {
         /* margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4); */
-        height: 100vh;
         width: 100vw;
-        background-color: var(--ddd-theme-default-color);
+        height: 10%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: var(--ddd-theme-default-nittanyNavy);
       }
       h3 span {
         font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
@@ -68,29 +71,38 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
       .title {
         font-size: var(--ddd-font-size-l);
         font-weight: var(--ddd-font-weight-bold);
-        padding-top: var(--ddd-spacing-25);
         text-align: center;
       }
       .content {
         font-size: var(--ddd-font-size-m);
         text-align: center;
       }
+      .sectionButtons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      simple-cta {
+        display: flex;
+        width: 20%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
     `];
-  }
-
-  updated(changedProperties) {
-    super.updated(changedProperties);
-    if (changedProperties.has('color')) {
-      this.style.setProperty('--ddd-theme-default-color', `var(--ddd-theme-default-${this.color})`);
-    }
   }
 
   // Lit render the HTML
   render() {
     return html`
 <div class="wrapper">
-  <h1 class="title">${this.title}</h1>
-  <slot class="content"></slot>
+  <div class="sectionButtons">
+    <simple-cta><a href="#1">About</a></simple-cta>
+    <simple-cta><a href=#2>Skills</a></simple-cta>
+    <simple-cta><a href=#3>Projects</a></simple-cta>
+    <simple-cta><a href=#4>Competitions</a></simple-cta>
+    <simple-cta><a href=#5>Contact</a></simple-cta>
+  </div>
 </div>`;
   }
 
@@ -103,4 +115,4 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
 //   }
 }
 
-globalThis.customElements.define(PortfolioScreen.tag, PortfolioScreen);
+globalThis.customElements.define(NavBar.tag, NavBar);
