@@ -21,6 +21,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.title = "Portfolio";
+    this.color = "pughBlue";
     this.t = this.t || {};
     this.t = {
       ...this.t,
@@ -40,6 +41,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
+      color: { type: String},
     };
   }
 
@@ -56,10 +58,20 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       .wrapper {
         /* margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4); */
+        background-color: var(--ddd-theme-default-color);
       }
       .title{
         margin-top: var(--ddd-spacing-0);
         /* margin-top: var(--ddd-spacing-20); */
+      }
+      .titleFirst{
+        margin-top: var(--ddd-spacing-23); 
+        margin-bottom: var(--ddd-spacing-0);
+        background-color: var(--ddd-theme-default-color);
+        font-size: var(--ddd-font-size-xl);
+        text-align: center;
+        width: 100vw;
+        /* padding-left: var(--ddd-spacing-5); */
       }
       .scrollButton {
         position: fixed;
@@ -73,13 +85,20 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       }
     `];
   }
+  
+  updated(changedProperties) {
+    super.updated(changedProperties);
+    if (changedProperties.has('color')) {
+      this.style.setProperty('--ddd-theme-default-color', `var(--ddd-theme-default-${this.color})`);
+    }
+  }
 
   // Lit render the HTML
   render() {
     return html`
 <div class="wrapper">
   <scroll-button class="scrollButton"></scroll-button>
-  <h1 class="title" style="margin-top: var(--ddd-spacing-23); margin-bottom: var(--ddd-spacing-0);">${this.title}</h1>
+  <h1 class="titleFirst">${this.title}</h1>
   <slot></slot>
 </div>`;
   }
