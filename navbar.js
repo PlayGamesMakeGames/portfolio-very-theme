@@ -76,17 +76,48 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
         font-size: var(--ddd-font-size-m);
         text-align: center;
       }
-      .sectionButtons{
+      .sectionButtons {
         display: flex;
         justify-content: center;
         align-items: center;
+        /* pointer-events: none; */
+        /* flex-wrap: wrap; */
       }
       simple-cta {
+        margin-left: 32px;
+        margin-right: 32px;
         display: flex;
         width: 20%;
         text-align: center;
         align-items: center;
         justify-content: center;
+        min-width: 150px;
+        /* pointer-events: fill; */
+      }
+
+      @media (max-width: 980px) {
+        .sectionButtons {
+          scale: 75%;
+        }
+        simple-cta {
+          width: 100%;
+        }
+      }
+      @media (max-width: 740px) {
+        .sectionButtons {
+          scale: 50%;
+        }
+        simple-cta {
+          width: 100%;
+        }
+      }
+      @media (max-width: 500px) {
+        .sectionButtons {
+          scale: 40%;
+        }
+        simple-cta {
+          width: 100%;
+        }
       }
     `];
   }
