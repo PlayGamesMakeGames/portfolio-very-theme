@@ -54,8 +54,6 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
-        /* margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4); */
         width: 100vw;
         height: 10%;
         position: fixed;
@@ -80,8 +78,6 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
         display: flex;
         justify-content: center;
         align-items: center;
-        /* pointer-events: none; */
-        /* flex-wrap: wrap; */
       }
       simple-cta {
         margin-left: var(--ddd-spacing-8);
@@ -92,7 +88,6 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
         align-items: center;
         justify-content: center;
         min-width: 150px;
-        /* pointer-events: fill; */
       }
 
       @media (max-width: 980px) {
@@ -135,14 +130,6 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
   </div>
 </div>`;
   }
-
-  /**
-   * haxProperties integration via file reference
-//    */
-//   static get haxProperties() {
-//     return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
-//       .href;
-//   }
 }
 
 globalThis.customElements.define(NavBar.tag, NavBar);

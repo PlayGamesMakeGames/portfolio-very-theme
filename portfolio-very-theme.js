@@ -56,13 +56,10 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
-        /* margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4); */
         background-color: var(--ddd-theme-default-color);
       }
       .title{
         margin-top: var(--ddd-spacing-0);
-        /* margin-top: var(--ddd-spacing-20); */
       }
       .titleFirst{
         margin-top: var(--ddd-spacing-23); 
@@ -71,7 +68,6 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         font-size: var(--ddd-font-size-xl);
         text-align: center;
         width: 100vw;
-        /* padding-left: var(--ddd-spacing-5); */
       }
       .scrollButton {
         position: fixed;
@@ -86,6 +82,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
     `];
   }
   
+  // Changes background color when its updated
   updated(changedProperties) {
     super.updated(changedProperties);
     if (changedProperties.has('color')) {

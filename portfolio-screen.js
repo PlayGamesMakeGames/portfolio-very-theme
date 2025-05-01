@@ -56,8 +56,6 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
         font-family: var(--ddd-font-navigation);
       }
       .wrapper {
-        /* margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4); */
         height: 100vh;
         width: 100vw;
         background-color: var(--ddd-theme-default-color);
@@ -79,6 +77,7 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
     `];
   }
 
+  // Changes background color when its updated
   updated(changedProperties) {
     super.updated(changedProperties);
     if (changedProperties.has('color')) {
@@ -95,13 +94,6 @@ export class PortfolioScreen extends DDDSuper(I18NMixin(LitElement)) {
 </div>`;
   }
 
-  /**
-   * haxProperties integration via file reference
-//    */
-//   static get haxProperties() {
-//     return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
-//       .href;
-//   }
 }
 
 globalThis.customElements.define(PortfolioScreen.tag, PortfolioScreen);
