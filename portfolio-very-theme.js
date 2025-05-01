@@ -75,8 +75,8 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       }
       .scrollButton {
         position: fixed;
-        bottom: 0;
-        right: 0;
+        bottom: var(--ddd-spacing-0);
+        right: var(--ddd-spacing-0);
         scale: 1.5;
         padding: var(--ddd-spacing-8);
       }

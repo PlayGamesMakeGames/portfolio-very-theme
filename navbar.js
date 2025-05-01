@@ -59,8 +59,8 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
         width: 100vw;
         height: 10%;
         position: fixed;
-        top: 0;
-        left: 0;
+        top: var(--ddd-spacing-0);
+        left: var(--ddd-spacing-0);
         z-index: 1000;
         background-color: var(--ddd-theme-default-nittanyNavy);
       }
@@ -84,8 +84,8 @@ export class NavBar extends DDDSuper(I18NMixin(LitElement)) {
         /* flex-wrap: wrap; */
       }
       simple-cta {
-        margin-left: 32px;
-        margin-right: 32px;
+        margin-left: var(--ddd-spacing-8);
+        margin-right: var(--ddd-spacing-8);
         display: flex;
         width: 20%;
         text-align: center;
